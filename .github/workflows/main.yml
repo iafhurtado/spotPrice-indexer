@@ -1,25 +1,11 @@
-name: Run spotPrice Indexer
+      - name: Run indexer
+        run: node indexer.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          RPC_URL: ${{ secrets.RPC_URL }}
 
-on:
-  schedule:
-    - cron: "0 */4 * * *" # Run every 4 hours
-  workflow_dispatch: # Permite correrlo manualmente desde el panel de Actions
-
-jobs:
-  run-indexer:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
+->
 
       - name: Run indexer
         run: node indexer.js
@@ -27,3 +13,4 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           RPC_URL: ${{ secrets.RPC_URL }}
+          CONTRACT_ADDRESS: ${{ secrets.CONTRACT_ADDRESS }}
