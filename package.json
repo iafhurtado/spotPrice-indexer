@@ -1,0 +1,25 @@
+{
+  "name": "spotprice-indexer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "jaibo",
+  "license": "ISC",
+  "description": "spotPrice-indexer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iafhurtado/spotPrice-indexer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iafhurtado/spotPrice-indexer/issues"
+  },
+  "homepage": "https://github.com/iafhurtado/spotPrice-indexer#readme",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "dotenv": "^17.2.0",
+    "ethers": "^6.15.0"
+  }
+}
